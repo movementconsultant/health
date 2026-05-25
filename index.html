@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Texas Movement Health</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Texas Movement Health — empowering everyday athletes with practical, evidence-informed guidance on movement, recovery, nutrition, and long-term performance.">
+
+  <style>
+
+    :root {
+
+      --tm-primary: #111827;
+
+      --tm-secondary: #f97316;
+
+      --tm-accent: #22c55e;
+
+      --tm-bg: #f9fafb;
+
+      --tm-text: #111827;
+
+      --tm-muted: #6b7280;
+
+      --tm-border: #e5e7eb;
+
+      --tm-radius: 10px;
+
+      --tm-shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+
+      --tm-font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --tm-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    body {
+
+      font-family: var(--tm-font-main);
+
+      background: var(--tm-bg);
+
+      color: var(--tm-text);
+
+      line-height: 1.6;
+
+      -webkit-font-smoothing: antialiased;
+
+    }
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+    img {
+
+      max-width: 100%;
+
+      display: block;
+
+    }
+
+    .page {
+
+      min-height: 100vh;
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
+
+    /* Top nav */
+
+    .nav {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 20;
+
+      backdrop-filter: blur(16px);
+
+      background: rgba(249, 250, 251, 0.9);
+
+      border-bottom: 1px solid var(--tm-border);
+
+    }
+
+    .nav-inner {
+
+      max-width: 1120px;
+
+      margin: 0 auto;
+
+      padding: 0.75rem 1.25rem;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 1.5rem;
+
+    }
+
+    .nav-left {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 0.75rem;
+
+    }
+
+    .logo-mark {
+
+      width: 36px;
+
+      height: 36px;
+
+      border-radius: 10px;
+
+      background: radial-gradient(circle at 20% 20%, #f97316 0, #ef4444 32%, #111827 100%);
+
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.4);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: #f9fafb;
+
+      font-size: 0.9rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.1em;
+
+    }
+
+    .nav-title {
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
+
+    .nav-title span {
+
+      font-size: 0.8rem;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+      color: var(--tm-muted);
+
+    }
+
+    .nav-title strong {
+
+      font-size: 1.05rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.09em;
+
+      text-transform: uppercase;
+
+    }
+
+    .nav-links {
+
+      display: flex;
+
+      gap: 1.5rem;
+
+      font-size: 0.9rem;
+
+      color: var(--tm-muted);
+
+    }
+
+    .nav-links a {
+
+      position: relative;
+
+      padding-bottom: 2px;
+
+    }
+
+    .nav-links a::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: 0;
+
+      width: 0;
+
+      height: 2px;
+
+      background: var(--tm-secondary);
+
+      transition: width 0.18s ease-out;
+
+    }
+
+    .nav-links a:hover::after {
+
+      width: 100%;
+
+    }
+
+    .nav-cta {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 0.75rem;
+
+    }
+
+    .nav-cta span {
+
+      font-size: 0.8rem;
+
+      color: var(--tm-muted);
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.09em;
+
+    }
+
+    .nav-cta a {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.4rem;
+
+      padding: 0.4rem 0.8rem;
+
+      border-radius: 999px;
+
+      border: 1px solid rgba(249, 250, 251, 0.1);
+
+      background: #111827;
+
+      color: #f9fafb;
+
+      font-size: 0.8rem;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.55);
+
+    }
+
+    .nav-cta a span {
+
+      color: inherit;
+
+      font-size: inherit;
+
+      letter-spacing: inherit;
+
+    }
+
+    .nav-cta a::after {
+
+      content: "↗";
+
+      font-size: 0.9rem;
+
+    }
+
+    /* Layout shell */
+
+    main {
+
+      flex: 1;
+
+    }
+
+    .shell {
+
+      max-width: 1120px;
+
+      margin: 0 auto;
+
+      padding: 2.5rem 1.25rem 3rem;
+
+    }
+
+    /* Hero */
+
+    .hero {
+
+      display: grid;
+
+      grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.4fr);
+
+      gap: 2.5rem;
+
+      align-items: center;
+
+      margin-top: 1rem;
+
+      margin-bottom: 3rem;
+
+    }
+
+    .hero-tagline {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.6rem;
+
+      font-size: 0.8rem;
+
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+
+      color: var(--tm-muted);
+
+      margin-bottom: 1rem;
+
+    }
+
+    .hero-tagline span {
+
+      width: 26px;
+
+      height: 1px;
+
+      background: var(--tm-muted);
+
+    }
+
+    .hero-title {
+
+      font-size: clamp(2.3rem, 3.1vw + 1.2rem, 3.2rem);
+
+      line-height: 1.1;
+
+      letter-spacing: -0.03em;
+
+      margin-bottom: 1rem;
+
+    }
+
+    .hero-title strong {
+
+      display: block;
+
+      color: var(--tm-secondary);
+
+    }
+
+    .hero-subtitle {
+
+      font-size: 0.98rem;
+
+      color: var(--tm-muted);
+
+      max-width: 30rem;
+
+      margin-bottom: 1.5rem;
+
+    }
+
+    .hero-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 0.75rem;
+
+      margin-bottom: 1.75rem;
+
+    }
+
+    .hero-chip {
+
+      padding: 0.5rem 0.85rem;
+
+      border-radius: 999px;
+
+      border: 1px solid var(--tm-border);
+
+      background: rgba(255, 255, 255, 0.9);
+
+      font-size: 0.8rem;
+
+      color: var(--tm-muted);
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.35rem;
+
+      backdrop-filter: blur(12px);
+
+    }
+
+    .hero-chip span {
+
+      width: 6px;
+
+      height: 6px;
+
+      border-radius: 999px;
+
+      background: var(--tm-secondary);
+
+    }
+
+    .hero-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      align-items: center;
+
+      gap: 0.9rem;
+
+    }
+
+    .btn-primary {
+
+      padding: 0.75rem 1.4rem;
+
+      border-radius: 999px;
+
+      border: none;
+
+      cursor: pointer;
+
+      background: linear-gradient(135deg, #f97316, #f97316 40%, #22c55e);
+
+      color: #111827;
+
+      font-size: 0.9rem;
+
+      font-weight: 600;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.4rem;
+
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+
+    }
+
+    .btn-primary span {
+
+      font-family: var(--tm-font-mono);
+
+      font-size: 0.85rem;
+
+    }
+
+    .btn-secondary {
+
+      padding: 0.7rem 1.1rem;
+
+      border-radius: 999px;
+
+      border: 1px dashed var(--tm-border);
+
+      color: var(--tm-muted);
+
+      font-size: 0.9rem;
+
+      background: transparent;
+
+      cursor: pointer;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.4rem;
+
+    }
+
+    .btn-secondary span {
+
+      font-family: var(--tm-font-mono);
+
+      font-size: 0.8rem;
+
+      color: var(--tm-secondary);
+
+    }
+
+    .hero-note {
+
+      margin-top: 1.2rem;
+
+      font-size: 0.8rem;
+
+      color: var(--tm-muted);
+
+      max-width: 32rem;
+
+    }
+
+    .hero-note em {
+
+      font-style: normal;
+
+      color: var(--tm-secondary);
+
+    }
+
+    /* Hero visual */
+
+    .hero-visual {
+
+      position: relative;
+
+    }
+
+    .hero-card {
+
+      position: relative;
+
+      padding: 1.6rem 1.4rem;
+
+      border-radius: var(--tm-radius);
+
+      background: radial-gradient(circle at 0 0, #f97316 0, #111827 50%, #020617 100%);
+
+      color: #f9fafb;
+
+      box-shadow: var(--tm-shadow-soft);
+
+      overflow: hidden;
+
+    }
+
+    .hero-card-header {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-bottom: 1.4rem;
+
+    }
+
+    .hero-card-title {
+
+      font-size: 0.85rem;
+
+      letter-spacing: 0.15em;
+
+      text-transform: uppercase;
+
+      opacity: 0.9;
+
+    }
+
+    .hero-card-tag {
+
+      padding: 0.2rem 0.7rem;
+
+      border-radius: 999px;
+
+      border: 1px solid rgba(248, 250, 252, 0.2);
+
+      font-size: 0.75rem;
+
+      font-family: var(--tm-font-mono);
+
+    }
+
+    .metric-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 0.9rem;
+
+      margin-bottom: 1.4rem;
+
+    }
+
+    .metric {
+
+      padding: 0.7rem 0.75rem;
+
+      border-radius: 0.9rem;
+
+      background: rgba(15, 23, 42, 0.7);
+
+      border: 1px solid rgba(148, 163, 184, 0.4);
+
+    }
+
+    .metric-label {
+
+      font-size: 0.7rem;
+
+      color: rgba(226, 232, 240, 0.78);
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.09em;
+
+      margin-bottom: 0.3rem;
+
+    }
+
+    .metric-value {
+
+      font-size: 1.1rem;
+
+      font-family: var(--tm-font-mono);
+
+    }
+
+    .metric-sub {
+
+      font-size: 0.7rem;
+
+      color: rgba(148, 163, 184, 0.85);
+
+      margin-top: 0.1rem;
+
+    }
+
+    .hero-card-footer {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 1rem;
+
+    }
+
+    .hero-card-footer span {
+
+      font-size: 0.8rem;
+
+      color: rgba(226, 232, 240, 0.9);
+
+    }
+
+    .hero-card-footer small {
+
+      font-size: 0.75rem;
+
+      color: rgba(148, 163, 184, 0.85);
+
+    }
+
+    .hero-label {
+
+      position: absolute;
+
+      right: 1rem;
+
+      bottom: -0.7rem;
+
+      padding: 0.45rem 0.75rem;
+
+      border-radius: 999px;
+
+      background: rgba(15, 23, 42, 0.9);
+
+      color: rgba(248, 250, 252, 0.92);
+
+      font-size: 0.7rem;
+
+      letter-spacing: 0.16em;
+
+      text-transform: uppercase;
+
+      border: 1px solid rgba(148, 163, 184, 0.5);
+
+    }
+
+    .hero-label strong {
+
+      color: var(--tm-secondary);
+
+      margin-left: 0.3rem;
+
+    }
+
+    .hero-pill {
+
+      position: absolute;
+
+      left: -0.4rem;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      padding: 0.3rem 0.7rem;
+
+      border-radius: 999px;
+
+      background: rgba(248, 250, 252, 0.92);
+
+      color: #111827;
+
+      font-size: 0.7rem;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+    }
+
+    .hero-pill span {
+
+      display: inline-block;
+
+      width: 6px;
+
+      height: 6px;
+
+      border-radius: 999px;
+
+      background: var(--tm-secondary);
+
+      margin-right: 0.3rem;
+
+    }
+
+    /* Philosophy */
+
+    .section {
+
+      margin-bottom: 3rem;
+
+    }
+
+    .section-header {
+
+      display: flex;
+
+      align-items: baseline;
+
+      justify-content: space-between;
+
+      gap: 1rem;
+
+      margin-bottom: 1.5rem;
+
+    }
+
+    .section-title {
+
+      font-size: 1.3rem;
+
+      letter-spacing: 0.08em;
+
+      text-transform: uppercase;
+
+    }
+
+    .section-subtitle {
+
+      font-size: 0.95rem;
+
+      color: var(--tm-muted);
+
+      max-width: 26rem;
+
+    }
+
+    .pill-row {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 0.5rem;
+
+      margin-top: 0.4rem;
+
+    }
+
+    .pill-row span {
+
+      padding: 0.25rem 0.6rem;
+
+      border-radius: 999px;
+
+      border: 1px solid var(--tm-border);
+
+      font-size: 0.75rem;
+
+      color: var(--tm-muted);
+
+    }
+
+    .philosophy-grid {
+
+      display: grid;
+
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+
+      gap: 2rem;
+
+    }
+
+    .philosophy-block {
+
+      padding: 1.4rem 1.3rem;
+
+      border-radius: var(--tm-radius);
+
+      background: #ffffff;
+
+      border: 1px solid var(--tm-border);
+
+      box-shadow: var(--tm-shadow-soft);
+
+    }
+
+    .philosophy-block h3 {
+
+      font-size: 0.95rem;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 0.6rem;
+
+      color: var(--tm-muted);
+
+    }
+
+    .philosophy-block h2 {
+
+      font-size: 1.15rem;
+
+      margin-bottom: 0.4rem;
+
+    }
+
+    .philosophy-block p {
+
+      font-size: 0.9rem;
+
+      color: var(--tm-muted);
+
+      margin-bottom: 0.7rem;
+
+    }
+
+    .philosophy-list {
+
+      list-style: none;
+
+      font-size: 0.88rem;
+
+      color: var(--tm-muted);
+
+    }
+
+    .philosophy-list li {
+
+      display: flex;
+
+      gap: 0.55rem;
+
+      margin-bottom: 0.5rem;
+
+    }
+
+    .philosophy-list li span {
+
+      margin-top: 0.25rem;
+
+      width: 6px;
+
+      height: 6px;
+
+      border-radius: 999px;
+
+      background: var(--tm-secondary);
+
+      flex-shrink: 0;
+
+    }
+
+    .philosophy-tagline {
+
+      font-size: 0.85rem;
+
+      color: var(--tm-muted);
+
+      margin-top: 0.6rem;
+
+      border-top: 1px dashed var(--tm-border);
+
+      padding-top: 0.6rem;
+
+    }
+
+    /* Pillars */
+
+    .pillars-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 1rem;
+
+    }
+
+    .pillar-card {
+
+      padding: 1.15rem 1rem;
+
+      border-radius: var(--tm-radius);
+
+      background: #ffffff;
+
+      border: 1px solid var(--tm-border);
+
+      box-shadow: var(--tm-shadow-soft);
+
+    }
+
+    .pillar-label {
+
+      font-size: 0.7rem;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+      color: var(--tm-muted);
+
+      margin-bottom: 0.35rem;
+
+    }
+
+    .pillar-title {
+
+      font-size: 1rem;
+
+      margin-bottom: 0.35rem;
+
+    }
+
+    .pillar-body {
+
+      font-size: 0.86rem;
+
+      color: var(--tm-muted);
+
+      margin-bottom: 0.6rem;
+
+    }
+
+    .pillar-meta {
+
+      font-size: 0.78rem;
+
+      color: var(--tm-muted);
+
+      font-family: var(--tm-font-mono);
+
+    }
+
+    /* Programs */
+
+    .programs-grid {
+
+      display: grid;
+
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+
+      gap: 1.75rem;
+
+    }
+
+    .program-card {
+
+      padding: 1.25rem 1.2rem;
+
+      border-radius: var(--tm-radius);
+
+      background: #ffffff;
+
+      border: 1px solid var(--tm-border);
+
+      box-shadow: var(--tm-shadow-soft);
+
+    }
+
+    .program-tag {
+
+      font-size: 0.75rem;
+
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+
+      color: var(--tm-muted);
+
+      margin-bottom: 0.4rem;
+
+    }
+
+    .program-title {
+
+      font-size: 1.05rem;
+
+      margin-bottom: 0.5rem;
+
+    }
+
+    .program-body {
+
+      font-size: 0.88rem;
+
+      color: var(--tm-muted);
+
+      margin-bottom: 0.7rem;
+
+    }
+
+    .program-meta {
+
+      font-size: 0.8rem;
+
+      color: var(--tm-muted);
+
+      font-family: var(--tm-font-mono);
+
+    }
+
+    /* CTA */
+
+    .cta {
+
+      margin-top: 2.5rem;
+
+      padding: 1.5rem 1.4rem;
+
+      border-radius: var(--tm-radius);
+
+      background: radial-gradient(circle at 0 0, #f97316 0, #111827 40%, #020617 100%);
+
+      color: #f9fafb;
+
+      box-shadow: var(--tm-shadow-soft);
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 1.5rem;
+
+    }
+
+    .cta-main {
+
+      max-width: 26rem;
+
+    }
+
+    .cta-main h2 {
+
+      font-size: 1.15rem;
+
+      margin-bottom: 0.4rem;
+
+    }
+
+    .cta-main p {
+
+      font-size: 0.9rem;
+
+      color: rgba(226, 232, 240, 0.9);
+
+    }
+
+    .cta-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 0.9rem;
+
+      align-items: center;
+
+    }
+
+    .cta-label {
+
+      font-size: 0.75rem;
+
+      letter-spacing: 0.16em;
+
+      text-transform: uppercase;
+
+      color: rgba(148, 163, 184, 0.95);
+
+    }
+
+    /* Footer */
+
+    footer {
+
+      border-top: 1px solid var(--tm-border);
+
+      padding: 1.5rem 1.25rem 2rem;
+
+      margin-top: 1rem;
+
+      font-size: 0.8rem;
+
+      color: var(--tm-muted);
+
+    }
+
+    .footer-inner {
+
+      max-width: 1120px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: space-between;
+
+      gap: 0.75rem;
+
+    }
+
+    .footer-left span {
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+    }
+
+    .footer-right {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 0.85rem;
+
+    }
+
+    .footer-right a {
+
+      position: relative;
+
+    }
+
+    .footer-right a::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: -1px;
+
+      width: 0;
+
+      height: 1px;
+
+      background: var(--tm-muted);
+
+      transition: width 0.15s ease-out;
+
+    }
+
+    .footer-right a:hover::after {
+
+      width: 100%;
+
+    }
+
+    /* Responsiveness */
+
+    @media (max-width: 900px) {
+
+      .hero {
+
+        grid-template-columns: minmax(0, 1fr);
+
+      }
+
+      .hero-visual {
+
+        order: -1;
+
+      }
+
+      .philosophy-grid {
+
+        grid-template-columns: minmax(0, 1fr);
+
+      }
+
+      .programs-grid {
+
+        grid-template-columns: minmax(0, 1fr);
+
+      }
+
+      .pillars-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      }
+
+    }
+
+    @media (max-width: 640px) {
+
+      .nav-inner {
+
+        flex-wrap: wrap;
+
+        gap: 0.5rem;
+
+      }
+
+      .nav-links {
+
+        display: none;
+
+      }
+
+      .hero {
+
+        margin-top: 0.75rem;
+
+      }
+
+      .hero-grid {
+
+        grid-template-columns: minmax(0, 1fr);
+
+      }
+
+      .pillars-grid {
+
+        grid-template-columns: minmax(0, 1fr);
+
+      }
+
+      .hero-card {
+
+        padding: 1.3rem 1.1rem;
+
+      }
+
+      .shell {
+
+        padding-inline: 1rem;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <header class="nav">
+
+      <div class="nav-inner">
+
+        <div class="nav-left">
+
+          <div class="logo-mark">TM</div>
+
+          <div class="nav-title">
+
+            <span>Texas Movement</span>
+
+            <strong>Health</strong>
+
+          </div>
+
+        </div>
+
+        <nav class="nav-links">
+
+          <a href="#philosophy">Philosophy</a>
+
+          <a href="#pillars">Pillars</a>
+
+          <a href="#programs">Programs</a>
+
+        </nav>
+
+        <div class="nav-cta">
+
+          <span>Everyday athlete first</span>
+
+          <a href="#cta"><span>Join early list</span></a>
+
+        </div>
+
+      </div>
+
+    </header>
+
+    <main>
+
+      <div class="shell">
+
+        <!-- Hero -->
+
+        <section class="hero" aria-labelledby="hero-heading">
+
+          <div>
+
+            <div class="hero-tagline">
+
+              <span></span>
+
+              Texas Movement Health
+
+            </div>
+
+            <h1 id="hero-heading" class="hero-title">
+
+              Health that moves
+
+              <strong>with your real life.</strong>
+
+            </h1>
+
+            <p class="hero-subtitle">
+
+              We design health around movement, recovery, and capacity so everyday athletes can sprint, lift, build, and lead for decades—not just for the next 12 weeks.
+
+            </p>
+
+            <div class="hero-grid">
+
+              <div class="hero-chip">
+
+                <span></span>
+
+                Evidence-informed, not fear-driven
+
+              </div>
+
+              <div class="hero-chip">
+
+                <span></span>
+
+                Movement-first, medication-aware
+
+              </div>
+
+              <div class="hero-chip">
+
+                <span></span>
+
+                Built for everyday athletes
+
+              </div>
+
+              <div class="hero-chip">
+
+                <span></span>
+
+                Translating science into reps
+
+              </div>
+
+            </div>
+
+            <div class="hero-actions">
+
+              <button class="btn-primary" type="button">
+
+                Get early access
+
+                <span>beta / Q4</span>
+
+              </button>
+
+              <button class="btn-secondary" type="button">
+
+                Read philosophy
+
+                <span>§01</span>
+
+              </button>
+
+            </div>
+
+            <p class="hero-note">
+
+              We are not a clinic and we do not replace your doctor. <em>We help you become the most informed person in the room about your own health, movement, and long game.</em>
+
+            </p>
+
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+
+            <div class="hero-card">
+
+              <div class="hero-card-header">
+
+                <div>
+
+                  <div class="hero-card-title">Everyday athlete dashboard</div>
+
+                  <small style="font-size:0.75rem; color:rgba(148,163,184,0.85);">Prototype · Internal use only</small>
+
+                </div>
+
+                <div class="hero-card-tag">HEALTH · MOVEMENT · CAPACITY</div>
+
+              </div>
+
+              <div class="metric-grid">
+
+                <div class="metric">
+
+                  <div class="metric-label">Weekly movement</div>
+
+                  <div class="metric-value">4.3 hrs</div>
+
+                  <div class="metric-sub">sprint + strength + play</div>
+
+                </div>
+
+                <div class="metric">
+
+                  <div class="metric-label">Recovery score</div>
+
+                  <div class="metric-value">78 / 100</div>
+
+                  <div class="metric-sub">sleep, soreness, stress</div>
+
+                </div>
+
+                <div class="metric">
+
+                  <div class="metric-label">Health literacy</div>
+
+                  <div class="metric-value">↑</div>
+
+                  <div class="metric-sub">one new concept / wk</div>
+
+                </div>
+
+              </div>
+
+              <div class="hero-card-footer">
+
+                <div>
+
+                  <span>Inputs we track lightly, not obsessively.</span><br>
+
+                  <small>Movement volume, strength trends, sleep consistency, labs you already have, and the stories you tell about your body.</small>
+
+                </div>
+
+                <div>
+
+                  <small>Data stays yours. We design tools that help you ask better questions, not surrender decisions.</small>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="hero-label">
+
+              Everyday <strong>capacity</strong> over short-term aesthetics
+
+            </div>
+
+            <div class="hero-pill">
+
+              <span></span>
+
+              Philosophy-first product design
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- Philosophy -->
+
+        <section id="philosophy" class="section" aria-labelledby="philosophy-heading">
+
+          <div class="section-header">
+
+            <div>
+
+              <h2 id="philosophy-heading" class="section-title">Philosophy</h2>
+
+              <p class="section-subtitle">
+
+                Health is not a subscription plan or a fear campaign. It is the cumulative effect of the moves you repeat, the stories you believe, and the constraints you learn to engineer around.
+
+              </p>
+
+            </div>
+
+            <div>
+
+              <div class="pill-row">
+
+                <span>Movement before metrics</span>
+
+                <span>Literacy before loyalty</span>
+
+                <span>Capacity before aesthetics</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="philosophy-grid">
+
+            <article class="philosophy-block">
+
+              <h3>01 · Orientation</h3>
+
+              <h2>Everyday athlete, long horizon</h2>
+
+              <p>
+
+                We treat you as an everyday athlete: someone whose life demands sprinting for opportunities, lifting real burdens, and recovering in imperfect conditions—not living in a lab.
+
+              </p>
+
+              <ul class="philosophy-list">
+
+                <li>
+
+                  <span></span>
+
+                  You are not a diagnosis, a chart, or a content algorithm; you are a system that adapts when given the right constraints and support.
+
+                </li>
+
+                <li>
+
+                  <span></span>
+
+                  We bias toward interventions that you can carry for decades—not 30-day detoxes, punishment cycles, or crash bulks.
+
+                </li>
+
+                <li>
+
+                  <span></span>
+
+                  We aim to raise your baseline capacity so that stress, setbacks, and seasons of heavy load do not erase your progress.
+
+                </li>
+
+              </ul>
+
+              <p class="philosophy-tagline">
+
+                If a strategy only works when life is easy, it is not our strategy.
+
+              </p>
+
+            </article>
+
+            <article class="philosophy-block">
+
+              <h3>02 · Method</h3>
+
+              <h2>Movement, literacy, and leverage</h2>
+
+              <p>
+
+                We blend strength and conditioning principles, basic physiology, and real-world constraints into a framework you can actually run in the field: at work, in court, in business, in family.
+
+              </p>
+
+              <ul class="philosophy-list">
+
+                <li>
+
+                  <span></span>
+
+                  Movement-first: we start with what your body can do, then layer in recovery, nutrition, and medical guidance—not the other way around.
+
+                </li>
+
+                <li>
+
+                  <span></span>
+
+                  Literacy-focused: we translate research and clinical wisdom into questions, checklists, and experiments you can use with your own care team.
+
+                </li>
+
+                <li>
+
+                  <span></span>
+
+                  Leverage-driven: we prioritize small, repeatable moves that compound—sleep windows, sprint blocks, strength minimums, and narrative shifts.
+
+                </li>
+
+              </ul>
+
+              <p class="philosophy-tagline">
+
+                Our goal is not to be the authority in your life. Our goal is to make you harder to mislead, easier to empower, and impossible to ignore in your own care.
+
+              </p>
+
+            </article>
+
+          </div>
+
+        </section>
+
+        <!-- Pillars -->
+
+        <section id="pillars" class="section" aria-labelledby="pillars-heading">
+
+          <div class="section-header">
+
+            <div>
+
+              <h2 id="pillars-heading" class="section-title">Pillars</h2>
+
+              <p class="section-subtitle">
+
+                A simple, repeatable frame for building capacity: Move, Recover, Understand. Each pillar holds up both performance and protection—so your future self has options, not regrets.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="pillars-grid">
+
+            <article class="pillar-card">
+
+              <div class="pillar-label">Pillar 01</div>
+
+              <h3 class="pillar-title">Move on purpose</h3>
+
+              <p class="pillar-body">
+
+                Intentional movement each week: sprinting, strength, mobility, and play. Enough structure to progress, enough flexibility to survive real life and travel seasons.
+
+              </p>
+
+              <p class="pillar-meta">
+
+                Examples: 2–3 strength sessions, 1 speed/power session, 1 long walk day, minimum movement floor on hard weeks.
+
+              </p>
+
+            </article>
+
+            <article class="pillar-card">
+
+              <div class="pillar-label">Pillar 02</div>
+
+              <h3 class="pillar-title">Recover like it matters</h3>
+
+              <p class="pillar-body">
+
+                Sleep, nervous system hygiene, and honest load management. We protect your ability to bounce back instead of pretending burnout is a personality trait.
+
+              </p>
+
+              <p class="pillar-meta">
+
+                Examples: simple sleep anchors, deload weeks, post-sprint rules, “off” switches after court or high-stress days.
+
+              </p>
+
+            </article>
+
+            <article class="pillar-card">
+
+              <div class="pillar-label">Pillar 03</div>
+
+              <h3 class="pillar-title">Understand your body</h3>
+
+              <p class="pillar-body">
+
+                Basic literacy in labs, medications, red flags, and long-game risk. We create tools and language so you can partner with clinicians instead of outsourcing everything.
+
+              </p>
+
+              <p class="pillar-meta">
+
+                Examples: question checklists for appointments, lab pattern prompts, medication literacy primers, and story reframes.
+
+              </p>
+
+            </article>
+
+          </div>
+
+        </section>
+
+        <!-- Programs / Offerings -->
+
+        <section id="programs" class="section" aria-labelledby="programs-heading">
+
+          <div class="section-header">
+
+            <div>
+
+              <h2 id="programs-heading" class="section-title">Programs & tools</h2>
+
+              <p class="section-subtitle">
+
+                We are building a small set of tools and experiences for everyday athletes who carry heavy responsibilities: founders, litigants, builders, and leaders in real-world pressure.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="programs-grid">
+
+            <article class="program-card">
+
+              <div class="program-tag">Beta · Digital</div>
+
+              <h3 class="program-title">Everyday Athlete Protocols</h3>
+
+              <p class="program-body">
+
+                Modular templates for movement, recovery, and health literacy you can adapt to your season. Designed to plug into your calendar, not take it over.
+
+              </p>
+
+              <p class="program-meta">
+
+                Format: PDF playbooks + short video breakdowns · Focus: sprint blocks, strength minimums, recovery floors, appointment prep.
+
+              </p>
+
+            </article>
+
+            <article class="program-card">
+
+              <div class="program-tag">In development</div>
+
+              <h3 class="program-title">Texas Movement Health Lab</h3>
+
+              <p class="program-body">
+
+                A private, invite-only space where we test tools, language, and programs with a small cohort of everyday athletes—and refine based on real outcomes, not just ideas.
+
+              </p>
+
+              <p class="program-meta">
+
+                Focus: experiments on capacity, stress, legal/business load, and long-term health decisions; no individual medical advice.
+
+              </p>
+
+            </article>
+
+          </div>
+
+        </section>
+
+        <!-- CTA -->
+
+        <section id="cta" class="cta" aria-labelledby="cta-heading">
+
+          <div class="cta-main">
+
+            <h2 id="cta-heading">Join the early list</h2>
+
+            <p>
+
+              If you are building something heavy and want your health to keep up, drop an email and we will reach out when the first protocols and tools are ready.
+
+            </p>
+
+          </div>
+
+          <div class="cta-actions">
+
+            <div>
+
+              <div class="cta-label">Step 01</div>
+
+              <!-- Replace with actual form integration (e.g., ConvertKit, MailerLite, custom backend) -->
+
+              <form action="#" method="post" style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.5rem;">
+
+                <input
+
+                  type="email"
+
+                  name="email"
+
+                  required
+
+                  placeholder="your@email.com"
+
+                  style="
+
+                    padding:0.55rem 0.7rem;
+
+                    border-radius:999px;
+
+                    border:1px solid rgba(148,163,184,0.6);
+
+                    font-size:0.85rem;
+
+                    min-width:220px;
+
+                  "
+
+                >
+
+                <button
+
+                  type="submit"
+
+                  style="
+
+                    padding:0.55rem 1.1rem;
+
+                    border-radius:999px;
+
+                    border:none;
+
+                    cursor:pointer;
+
+                    background:#f9fafb;
+
+                    color:#111827;
+
+                    font-size:0.8rem;
+
+                    letter-spacing:0.14em;
+
+                    text-transform:uppercase;
+
+                    font-weight:600;
+
+                  "
+
+                >
+
+                  Submit
+
+                </button>
+
+              </form>
+
+            </div>
+
+            <div>
+
+              <div class="cta-label">Step 02</div>
+
+              <p style="font-size:0.8rem; color:rgba(226,232,240,0.9); margin-top:0.4rem;">
+
+                Tell us what you are carrying (law, business, family, training), so we can prioritize tools that actually move the needle for you.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </main>
+
+    <footer>
+
+      <div class="footer-inner">
+
+        <div class="footer-left">
+
+          <span>Texas Movement Health</span><br>
+
+          <small>&copy; 2026 Texas Movement International LLC. All rights reserved.</small>
+
+        </div>
+
+        <div class="footer-right">
+
+          <a href="https://texasmovement.com" target="_blank" rel="noopener noreferrer">Main site</a>
+
+          <a href="mailto:health@texasmovement.com">Contact</a>
+
+          <a href="#philosophy">Philosophy</a>
+
+          <a href="#programs">Programs</a>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
